@@ -1,13 +1,14 @@
-import bubble
+from sorting import bubble, insert
 
 def main():
     input = [7,2,3,1,4,5,6]
-    log(input,-1)
+    log(input, -1)
 
     #SORT ALGORITHMS
-    bubble.sort(input)
+    # bubble.sort(input)
+    insert.sort(input)
 
-    log(input,1)
+    log(input, 1)
 
 def log(value,pos):
     position = ""
