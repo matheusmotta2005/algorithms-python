@@ -1,4 +1,4 @@
-from sorting import bubble, insert
+from sorting import bubble, insert, merge
 
 def main():
     input = [7,2,3,1,4,5,6]
@@ -6,7 +6,8 @@ def main():
 
     #SORT ALGORITHMS
     # bubble.sort(input)
-    insert.sort(input)
+    # insert.sort(input)
+    merge.sort(input)
 
     log(input, 1)
 
