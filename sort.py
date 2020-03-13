@@ -1,8 +1,11 @@
+import bubble
+
 def main():
     input = [7,2,3,1,4,5,6]
     log(input,-1)
 
-    #SORT ALGORITHM
+    #SORT ALGORITHMS
+    bubble.sort(input)
 
     log(input,1)
 
