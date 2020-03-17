@@ -1,18 +1,28 @@
-class Merge:
-    def sort(self,arr):
-        # Sort a given array in ascending order
-        # using a divide-conquer merge algorithm
+from sorting.interface import Sort
+
+class Merge(Sort):
+    def __init__(self, input):
+        self.arr = input
+
+    def sort(self):
+        # Use a private mergeSplit logic to divide array in small chunks using recursion
+        # as Sort interface has no paremeters to recursive
+        self.__mergeSplit(self.arr)
+    
+    def __mergeSplit(self, arr):
         arr_size = len(arr)
+
+        # Stop chunking array when minimum size was reached
         if arr_size<2:
             return arr
 
-        # Divide all array in left and right chunks
+        # Divide array in the middle to compare left and right chunks
         mid = arr_size//2
-        left = self.sort(arr[0:mid])
-        right = self.sort(arr[mid:arr_size])
+        left = arr[0:mid]
+        right = arr[mid:arr_size]
 
-        # Start merging two chunked arrays into master array
-        return self.__mergeSort(arr, left, right)
+        # Start merging two minimum chunked arrays into a master array
+        return self.__mergeSort(arr, self.__mergeSplit(left), self.__mergeSplit(right))
 
     def __mergeSort(self, arr, left, right):
         i,l,r = 0,0,0

@@ -1,25 +1,12 @@
-from sorting import bubble, insert
+from sorting.bubble import Bubble
+from sorting.insert import Insert
 from sorting.merge import Merge
 
-def main():
-    input = [7,2,3,1,4,5,6]
-    log(input, -1)
+def bubble(input):
+    Bubble(input).sort()
 
-    #SORT ALGORITHMS
-    # bubble.sort(input)
-    # insert.sort(input)
-    Merge().sort(input)
+def insert(input):
+    Insert(input).sort()
 
-    log(input, 1)
-
-def log(value,pos):
-    position = ""
-    if pos<0:
-        position = "Before: "
-    elif pos>0:
-        position = "After: "
-    else:
-        position = "Output: "
-    print(position+str(value))
-
-main()
+def merge(input):
+    Merge(input).sort()
