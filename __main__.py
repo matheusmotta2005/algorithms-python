@@ -1,29 +1,29 @@
-import sort, config
-from datetime import datetime
-from log import Log
-
-input, log = [],Log([])
+import sort
+from config import *
 
 def reset(text):
     global input
-    input = config.INPUT_ARRAY[:]
-    global log
-    log = Log(input)
+    input = INPUT_ARRAY[:]
     print("===== "+str(text)+" =====")
 
-# Bubble algorithm
-# reset(input, log)
-reset("Bubble Sort")
-sort.bubble(input)
+def main():
+    if SORT_BUBBLE_ENABLED:
+        # Bubble algorithm
+        reset("Bubble Sort")
+        sort.bubble(input)
 
-# Insert algorithm
-reset("Insertion Sort")
-sort.insert(input)
+    if SORT_INSERT_ENABLED:
+        # Insert algorithm
+        reset("Insertion Sort")
+        sort.insert(input)
 
-# Merge algorithm
-reset("Merge Sort")
-sort.merge(input)
+    if SORT_MERGE_ENABLED:
+        # Merge algorithm
+        reset("Merge Sort")
+        sort.merge(input)
 
-# QuickSOrt algorithm
-reset("Quick Sort")
-sort.quick(input)
+    if SORT_QUICK_ENABLED:
+        # QuickSOrt algorithm
+        reset("Quick Sort")
+        sort.quick(input)
+main()
